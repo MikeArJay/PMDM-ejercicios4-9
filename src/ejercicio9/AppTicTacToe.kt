@@ -37,8 +37,8 @@ fun comprobarGanador(tablero: Array<Array<String>>): String? {
     if(countX - countO !in -1..1) return null // solo puede haber una diferencia de una jugada
 
     // comprobar ganador
-    var winnerX: Boolean = false
-    var winnerO: Boolean = false
+    var winnerX = false
+    var winnerO = false
 
     val combinacionesGanadoras = arrayOf(
         //horizontal
@@ -55,9 +55,9 @@ fun comprobarGanador(tablero: Array<Array<String>>): String? {
     )
     combinacionesGanadoras.forEach { combinacion ->
         // comprobación de x
-        if (comprobarCombinación("X", combinacion, tablero)) winnerX = true
+        if (comprobarCombinacion("X", combinacion, tablero)) winnerX = true
         // comprobación de o
-        if (comprobarCombinación("O", combinacion, tablero)) winnerO = true
+        if (comprobarCombinacion("O", combinacion, tablero)) winnerO = true
     }
     return if (winnerX && winnerO) null
     else if (winnerX) "X"
@@ -66,7 +66,7 @@ fun comprobarGanador(tablero: Array<Array<String>>): String? {
     else null
 }
 
-fun comprobarCombinación(xo: String, combinacion: Array<Index>, tablero: Array<Array<String>>): Boolean {
+fun comprobarCombinacion(xo: String, combinacion: Array<Index>, tablero: Array<Array<String>>): Boolean {
     for (index in combinacion) {
         if (tablero[index.row][index.column].uppercase() != xo) return false
     }
