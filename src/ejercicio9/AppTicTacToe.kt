@@ -21,7 +21,9 @@ fun comprobarGanador(tablero: Array<Array<String>>): String? {
     var countX = 0
     var countO = 0
     var emptyCount = 0
+
     if (tablero.size != 3 || tablero[0].size != 3 || tablero[1].size != 3 || tablero[2].size != 3) return null
+
     tablero.forEach { fila ->
         fila.forEach { posicion ->
             when (posicion.uppercase()) {
@@ -33,6 +35,7 @@ fun comprobarGanador(tablero: Array<Array<String>>): String? {
         }
     }
     if(countX - countO !in -1..1) return null // solo puede haber una diferencia de una jugada
+
     // comprobar ganador
     var winnerX: Boolean = false
     var winnerO: Boolean = false
