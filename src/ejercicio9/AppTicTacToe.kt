@@ -12,8 +12,8 @@ fun main() {
 
 }
 
-class Index(val row: Int, val column: Int) {
-}
+class Index(val row: Int, val column: Int)
+
 
 fun comprobarGanador(tablero: Array<Array<String>>): String? {
 
